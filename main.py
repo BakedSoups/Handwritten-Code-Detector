@@ -16,6 +16,7 @@ def ModelStats(accuracy, loss, epochs, batchNum, randomnum_classes, modelnum):
         f.write(f'Batch Size: {batchNum}\n')
         f.write(f'Number of Classes: {randomnum_classes}\n')
         f.write('\n')
+print("ModelStats function defined")
 
 
 def train(modelnum):
