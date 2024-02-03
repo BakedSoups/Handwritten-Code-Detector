@@ -1,0 +1,146 @@
+model 30:
+Accuracy: 0.9290000200271606
+Loss: 0.24460256099700928
+Epochs: 52
+
+
+model 0:
+Accuracy: 0.8841999769210815
+Loss: 0.42038437724113464
+Epochs: 40
+Batch Size: 395
+Number of Classes: 77
+
+model 1:
+Accuracy: 0.9290000200271606
+Loss: 0.24185872077941895
+Epochs: 66
+Batch Size: 156
+Number of Classes: 13
+
+model 2:
+Accuracy: 0.9387000203132629
+Loss: 0.20525647699832916
+Epochs: 117
+Batch Size: 214
+Number of Classes: 33
+
+model 3:
+Accuracy: 0.9373999834060669
+Loss: 0.20772582292556763
+Epochs: 93
+Batch Size: 167
+Number of Classes: 25
+
+model 4:
+Accuracy: 0.8891000151634216
+Loss: 0.39249202609062195
+Epochs: 40
+Batch Size: 348
+Number of Classes: 71
+
+model 5:
+Accuracy: 0.9261999726295471
+Loss: 0.25546878576278687
+Epochs: 105
+Batch Size: 383
+Number of Classes: 78
+
+model 6:
+Accuracy: 0.9150000214576721
+Loss: 0.2985929846763611
+Epochs: 57
+Batch Size: 239
+Number of Classes: 21
+
+model 7:
+Accuracy: 0.9171000123023987
+Loss: 0.2892468571662903
+Epochs: 74
+Batch Size: 279
+Number of Classes: 56
+
+model 8:
+Accuracy: 0.9415000081062317
+Loss: 0.19513921439647675
+Epochs: 120
+Batch Size: 177
+Number of Classes: 76
+
+model 9:
+Accuracy: 0.9309999942779541
+Loss: 0.23499786853790283
+Epochs: 88
+Batch Size: 170
+Number of Classes: 93
+
+model 10:
+Accuracy: 0.9275000095367432
+Loss: 0.247556671500206
+Epochs: 103
+Batch Size: 314
+Number of Classes: 95
+
+model 11:
+Accuracy: 0.8971999883651733
+Loss: 0.3698749840259552
+Epochs: 44
+Batch Size: 328
+Number of Classes: 91
+
+model 12:
+Accuracy: 0.9365000128746033
+Loss: 0.21312998235225677
+Epochs: 79
+Batch Size: 160
+Number of Classes: 21
+
+model 13:
+Accuracy: 0.9172999858856201
+Loss: 0.29159754514694214
+Epochs: 42
+Batch Size: 143
+Number of Classes: 13
+
+model 14:
+Accuracy: 0.9312999844551086
+Loss: 0.22836391627788544
+Epochs: 104
+Batch Size: 240
+Number of Classes: 27
+
+model 15:
+Accuracy: 0.9193000197410583
+Loss: 0.2814386188983917
+Epochs: 88
+Batch Size: 391
+Number of Classes: 73
+
+model 16:
+Accuracy: 0.9329000115394592
+Loss: 0.23099668323993683
+Epochs: 75
+Batch Size: 132
+Number of Classes: 97
+
+model 17:
+Accuracy: 0.9347000122070312
+Loss: 0.21695014834403992
+Epochs: 105
+Batch Size: 230
+Number of Classes: 40
+
+model 18:
+Accuracy: 0.9214000105857849
+Loss: 0.2748911678791046
+Epochs: 72
+Batch Size: 224
+Number of Classes: 77
+
+model 19:
+Accuracy: 0.9178000092506409
+Loss: 0.29101696610450745
+Epochs: 72
+Batch Size: 317
+Number of Classes: 57
+
