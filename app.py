@@ -5,7 +5,7 @@ import win32gui
 from PIL import ImageGrab, Image
 import numpy as np
 
-model = load_model('mnist.h5')
+model = load_model('mnist30.h5')
 
 def predict_digit(img):
     #resize image to 28x28 pixels
@@ -27,9 +27,9 @@ class App(tk.Tk):
         self.x = self.y = 0
 
         # Creating elements
-        self.canvas = tk.Canvas(self, width=500, height=500, bg = "white", cursor="cross")
+        self.canvas = tk.Canvas(self, width=50, height=50, bg = "white", cursor="cross")
         self.label = tk.Label(self, text="Thinking..", font=("Helvetica", 48))
-        self.classify_btn = tk.Button(self, text = "Recognise", command =         self.classify_handwriting) 
+        self.classify_btn = tk.Button(self, text = "Recognise", command = self.classify_handwriting) 
         self.button_clear = tk.Button(self, text = "Clear", command = self.clear_all)
 
         # Grid structure
@@ -56,7 +56,7 @@ class App(tk.Tk):
     def draw_lines(self, event):
         self.x = event.x
         self.y = event.y
-        r=8
+        r=1
         self.canvas.create_oval(self.x-r, self.y-r, self.x + r, self.y + r, fill='black')
 
 app = App()
