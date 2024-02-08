@@ -20,9 +20,12 @@ print("ModelStats function defined")
 
 
 def train(modelnum):
-    batchNum = random.randint(128, 400)
-    randomnum_classes = random.randint(10, 100)
-    epoochRandnum = random.randint(40, 120)
+    # batchNum = random.randint(128, 400)
+    # randomnum_classes = random.randint(10, 100)
+    # epoochRandnum = random.randint(40, 120)
+    batchNum = 900
+    randomnum_classes = 400
+    epoochRandnum = 60
 
     batch_size = batchNum
     num_classes = randomnum_classes
@@ -83,5 +86,5 @@ def trainModel(modelnum):
         train(i)
 
 if __name__ == "__main__":
-    trainModel(60)
+    trainModel(1)
 

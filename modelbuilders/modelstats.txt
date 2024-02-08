@@ -1,0 +1,7 @@
+model 0:
+Accuracy: 0.8669000267982483
+Loss: 0.5043563842773438
+Epochs: 60
+Batch Size: 900
+Number of Classes: 400
+

@@ -1,4 +1,4 @@
-mport numpy as np  
+import numpy as np  
 import pandas as pd   #{for reading the csv files}
 import matplotlib.pyplot as plt #{Using for plotting the graphs}
 import os 
@@ -11,8 +11,8 @@ from sklearn.metrics import confusion_matrix, accuracy_score, f1_score #{Machine
 currentdir = os.getcwd()  
 
 #Reading the dataset 
-train_df = pd.read_csv(f"{currentdir}/Data/train.csv")
-test_df = pd.read_csv(f"{currentdir}/Data/test.csv")
+train_df = pd.read_csv(f"{currentdir}/Data/alpha_gym/train.csv")
+test_df = pd.read_csv(f"{currentdir}/Data/alpha_gym/test.csv")
 
 x = train_df.drop('label', axis=1)
 y = train_df['label']

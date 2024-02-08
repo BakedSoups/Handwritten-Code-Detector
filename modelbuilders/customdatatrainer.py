@@ -3,6 +3,8 @@ import random
 import numpy as np
 import pandas as pd
 import os
+
+currentdir = "C:\\Users\\peczo\\OneDrive\\Desktop\\Projects\\Desktop-Apps\\Git\\AwfulIDE\Data\\"
 def ModelStats(accuracy, loss, epochs, batchNum, randomnum_classes, modelnum):
     with open('modelstats.txt', 'a') as f:
         f.write(f'{modelnum}:\n')
@@ -14,18 +16,19 @@ def ModelStats(accuracy, loss, epochs, batchNum, randomnum_classes, modelnum):
         f.write('\n')
 
 def train(modelnum):
-    batchNum = random.randint(200, 1000)
-    randomnum_classes = random.randint(200, 1000)
-    epoochRandnum = random.randint(200, 1000)
-
+    # batchNum = random.randint(2000, 100000)
+    # randomnum_classes = random.randint(2000, 1000)
+    # epoochRandnum = random.randint(200, 1000)
+    batchNum = 20000
+    randomnum_classes = 2000
+    epoochRandnum = 200
     batch_size = batchNum
     num_classes = randomnum_classes
     epochs = epoochRandnum
 
     # Load your Kaggle dataset
-    train_df = pd.read_csv('train.csv')
-    test_df = pd.read_csv('test.csv')
-
+    train_df = pd.read_csv(f"{currentdir}\\alpha_gym\\train.csv")
+    test_df = pd.read_csv(f"{currentdir}\\alpha_gym\\test.csv")
     x_train = train_df.drop('label', axis=1).values.reshape(-1, 28, 28, 1)
     y_train = keras.utils.to_categorical(train_df['label'].values, num_classes)
 
