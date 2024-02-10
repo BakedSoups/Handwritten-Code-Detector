@@ -16,10 +16,7 @@ def ModelStats(accuracy, loss, epochs, batchNum, randomnum_classes, modelnum):
         f.write('\n')
 
 def train(modelnum):
-    # batchNum = random.randint(2000, 100000)
-    # randomnum_classes = random.randint(2000, 1000)
-    # epoochRandnum = random.randint(200, 1000)
-    batchNum = 20000
+    batchNum = 2000
     randomnum_classes = 2000
     epoochRandnum = 200
     batch_size = batchNum

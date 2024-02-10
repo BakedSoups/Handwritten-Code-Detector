@@ -38,6 +38,8 @@ class App(tk.Tk):
         self.button_clear = tk.Button(self, text = "Clear", command = self.clear_all)
         self.button_rundir = tk.Button(self, text = "Run Dir", command = self.run_dir)
         self.button_ocr = tk.Button(self, text = "OCR", command = self.tes_version)  
+        self.button_eraser_tool = tk.Button(self, text= "eraser", command = self.eraser) 
+        self.button_pencil = tk.Button(self, text = "pencil", command, self.marker)
 
         # Grid structure
         self.canvas.grid(row=0, column=0, pady=2, sticky=W, )
@@ -72,10 +74,14 @@ class App(tk.Tk):
         index = 1
         for i in range(5):
             im = Image.open(f'{currentdir}/Samples/{index}.png')
-            img2 = np.array(Image.open(im))
+            img2 = np.array(Image.open(im)) 
+            # convert this part into np array correctly 
             text = pytesseract.image_to_string(img2)
             print(f"number is {index}  and prediction is {text}")
-            index+=1
+            results = pytesseract.image_to_data(image, output_type=Output.DICT)
+            index+=1 
+
+        
 
     def classify_handwriting(self):
         HWND = self.canvas.winfo_id() # get the handle of the canvas
@@ -96,11 +102,11 @@ class App(tk.Tk):
         digit, acc = predict_digit(im_inverted)
         self.label.configure(text= str(digit)+', '+ str(int(acc*100))+'%')
 
-    def draw_lines(self, event):
+    def draw_lines(self, event, color):
         self.x = event.x
         self.y = event.y
-        r=2
-        self.canvas.create_oval(self.x-r, self.y-r, self.x + r, self.y + r, fill='black')
+        r=3
+        self.canvas.create_oval(self.x-r, self.y-r, self.x + r, self.y + r, fill=color)
 
 app = App()
 mainloop()
