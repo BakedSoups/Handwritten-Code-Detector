@@ -29,6 +29,7 @@ def train(modelnum):
     x_train = train_df.drop('label', axis=1).values.reshape(-1, 28, 28, 1)
     y_train = keras.utils.to_categorical(train_df['label'].values, num_classes)
 
+    
     if 'label' in test_df.columns:
         x_test = test_df.drop('label', axis=1).values.reshape(-1, 28, 28, 1)
         y_test = keras.utils.to_categorical(test_df['label'].values, num_classes)

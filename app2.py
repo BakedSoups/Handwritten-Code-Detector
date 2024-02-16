@@ -39,14 +39,14 @@ class App(tk.Tk):
         self.button_clear = tk.Button(self, text = "Clear", command = self.clear_all)
         self.button_rundir = tk.Button(self, text = "Run Dir", command = self.run_dir)
         self.button_ocr = tk.Button(self, text = "OCR", command = self.tes_version)  
-        self.button_switch = tk.Button(self, text= "switch", command = self.switchTools) 
+        self.button_switch = tk.Button(self, text= "switch", command = self.switchTools)  ## add a switch button to switch between colors
         
 
         # Grid structure
         self.canvas.grid(row=0, column=0, pady=2, sticky=W, )
         self.label.grid(row=0, column=1,pady=2, padx=2)
         self.classify_btn.grid(row=1, column=1, pady=2, padx=2)
-        self.button_clear.grid(row=1, column=0, pady=2)
+        self.button_clear.grid(row=1, column=0, pady=2) 
         self.button_rundir.grid(row=2, column=2, pady=2)
         self.button_ocr.grid(row=2, column=3, pady=2)   
         self.button_switch.grid(row = 2, column = 4, pady=2, padx=2)
@@ -82,6 +82,7 @@ class App(tk.Tk):
             print(f"number is {index}  and prediction is {text}")
             results = pytesseract.image_to_data(image, output_type=Output.DICT)
             index+=1 
+        
 
         
 
@@ -89,6 +90,7 @@ class App(tk.Tk):
         HWND = self.canvas.winfo_id() # get the handle of the canvas
         rect = win32gui.GetWindowRect(HWND) # get the coordinate of the canvas
         im = ImageGrab.grab(rect)
+        
         # downloand scaled image to dir
         #invert image
         im_cv = cv2.cvtColor(np.array(im), cv2.COLOR_RGB2BGR)
@@ -105,11 +107,11 @@ class App(tk.Tk):
         self.label.configure(text= str(digit)+', '+ str(int(acc*100))+'%')
 
     def draw_lines(self, event, color):
-        color = color[0]
         self.x = event.x
         self.y = event.y
+        print(color[0])
         r = 3
-        self.canvas.create_oval(self.x-r, self.y-r, self.x + r, self.y + r, fill=color)
+        self.canvas.create_oval(self.x-r, self.y-r, self.x + r, self.y + r, fill="black")
 
     def switchTools(self,color): 
         rv = color[i]
