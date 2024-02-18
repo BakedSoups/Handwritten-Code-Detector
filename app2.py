@@ -10,7 +10,7 @@ import pytesseract
 currentdir = os.getcwd()
 
 model = load_model(f'{currentdir}\\models\\mnst\\mnist30.h5')
-
+color = ["black", "white"]
 def predict_digit(img):
     #resize image to 28x28 pixels
     img = img.resize((28,28))
@@ -30,7 +30,7 @@ class App(tk.Tk):
         tk.Tk.__init__(self)
 
         self.x = self.y = 0
-        color = ["black", "whte"]
+        
 
         # Creating elements
         self.canvas = tk.Canvas(self, width=500, height=500, bg = "white", cursor="cross")
@@ -53,7 +53,8 @@ class App(tk.Tk):
 
         
         #self.canvas.bind("<Motion>", self.start_pos)
-        self.canvas.bind("<B1-Motion>", self.draw_lines)
+        self.canvas.bind("<B1-Motion>", lambda event, color=color: self.draw_lines(event, color))
+
 
     def clear_all(self):
         self.canvas.delete("all")
@@ -106,17 +107,22 @@ class App(tk.Tk):
         digit, acc = predict_digit(im_inverted)
         self.label.configure(text= str(digit)+', '+ str(int(acc*100))+'%')
 
-    def draw_lines(self, event, color):
+    def draw_lines(self, event,color):
         self.x = event.x
         self.y = event.y
-        print(color[0])
+        print(f"Current Color : {color[0]}")
         r = 3
-        self.canvas.create_oval(self.x-r, self.y-r, self.x + r, self.y + r, fill="black")
+        self.canvas.create_oval(self.x-r, self.y-r, self.x + r, self.y + r, fill=color[0])
+        
 
-    def switchTools(self,color): 
-        rv = color[i]
-        color[i] = color[i+1]
-        color[i+1] = rv 
+    def switchTools(self): 
+        global color
+        rv = color[0]
+        color[0] = color[1]
+        color[1] = rv
+
+    def savePredictions(): 
+        pass 
         
 
 app = App()
